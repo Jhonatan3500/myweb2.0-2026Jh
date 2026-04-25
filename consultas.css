@@ -1,0 +1,323 @@
+        /* =============================================
+           IMPORTACIÓN DE FUENTES (mismo diseño base)
+           ============================================= */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+        /* =============================================
+           RESET + CONFIGURACIÓN BASE
+           ============================================= */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f7f9;
+            color: #2d3436;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.65;
+            font-size: 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* =============================================
+           NAVEGACIÓN (exactamente igual al diseño original)
+           ============================================= */
+        .principal {
+            background-color: #b32a23;
+            padding: 0 5%;
+            height: 76px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(60, 16, 16, 0.236);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .principal h1 {
+            color: #ffffff;
+            font-size: 1.35rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .menu-principal {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            gap: 8px;
+        }
+
+        .menu-principal li {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-principal li a {
+            color: #cbd5e0;
+            text-decoration: none;
+            padding: 0 24px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .menu-principal li a:hover {
+            color: #ffffff;
+            background-color: #fb2100;
+        }
+
+        .submenu-lista {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ffffff;
+            min-width: 220px;
+            list-style: none;
+            opacity: 0;
+            visibility: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            border-top: 4px solid #db5034;
+            transition: all 0.25s ease;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .submenu:hover .submenu-lista {
+            opacity: 1;
+            visibility: visible;
+            margin-top: 12px;
+        }
+
+        .submenu-lista li a {
+            color: #502c2c;
+            padding: 14px 24px;
+            display: block;
+            font-size: 0.94rem;
+            border-bottom: 1px solid #f1f5f9;
+            transition: all 0.2s ease;
+        }
+
+        .submenu-lista li:last-child a {
+            border-bottom: none;
+        }
+
+        .submenu-lista li a:hover {
+            background-color: #f8fafc;
+            color: #db3c34;
+            padding-left: 28px;
+        }
+
+        /* =============================================
+           CONTENEDOR PRINCIPAL (tarjeta del formulario)
+           ============================================= */
+        .contenedor {
+            max-width: 720px;
+            margin: 60px auto;
+            padding: 40px 36px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e6ecf3;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .contenedor:hover {
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #371f1f;
+            font-size: 2rem;
+            margin-bottom: 36px;
+            padding-left: 22px;
+            border-left: 6px solid #db3c34;
+            line-height: 1.25;
+        }
+
+        /* =============================================
+           FORMULARIO - GRUPOS DE CAMPOS
+           ============================================= */
+        .grupo {
+            margin-bottom: 28px;
+        }
+
+        .grupo label {
+            display: block;
+            font-weight: 600;
+            color: #371f1f;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            letter-spacing: -0.2px;
+        }
+
+        .grupo input[type="text"],
+        .grupo input[type="email"],
+        .grupo input[type="tel"],
+        .grupo select,
+        .grupo textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.98rem;
+            color: #2d3436;
+            background-color: #f9fafc;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            resize: vertical;
+        }
+
+        .grupo input:focus,
+        .grupo select:focus,
+        .grupo textarea:focus {
+            outline: none;
+            border-color: #db3c34;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 4px rgba(219, 60, 52, 0.1);
+        }
+
+        ::placeholder {
+            color: #94a3b8;
+            opacity: 0.8;
+        }
+
+        /* Estilo para textarea */
+        .grupo textarea {
+            min-height: 140px;
+            line-height: 1.55;
+        }
+
+        /* =============================================
+           BOTÓN DE ENVÍO
+           ============================================= */
+        button[type="submit"] {
+            width: 100%;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, #db3c34, #b32a23);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 20px rgba(219, 60, 52, 0.3);
+            margin-top: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background: linear-gradient(135deg, #c5302a, #9b2c2c);
+            box-shadow: 0 12px 28px rgba(219, 60, 52, 0.45);
+            transform: translateY(-2px);
+        }
+
+        button[type="submit"]:active {
+            transform: translateY(1px);
+            box-shadow: 0 4px 12px rgba(219, 60, 52, 0.4);
+        }
+
+        /* =============================================
+           FOOTER
+           ============================================= */
+        footer {
+            background-color: #2f1b1a;
+            color: #cbd5e0;
+            padding: 50px 20px 30px;
+            margin-top: auto;
+            text-align: center;
+            border-top: 5px solid #db3c34;
+        }
+
+        footer h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 500;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: #94a3b8;
+            margin-bottom: 12px;
+            border-left: none;
+            padding-left: 0;
+            transition: color 0.3s ease;
+        }
+
+        footer h2:hover {
+            color: #e2e8f0;
+        }
+
+        /* =============================================
+           RESPONSIVIDAD
+           ============================================= */
+        @media (max-width: 768px) {
+            .principal {
+                flex-direction: column;
+                height: auto;
+                padding: 16px 5%;
+                gap: 16px;
+            }
+
+            .menu-principal {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 4px;
+            }
+
+            .submenu-lista {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                width: 100%;
+                margin-top: 8px;
+                border-radius: 8px;
+            }
+
+            .contenedor {
+                margin: 30px 16px;
+                padding: 28px 22px;
+                border-radius: 16px;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+                padding-left: 16px;
+            }
+
+            .grupo label {
+                font-size: 0.9rem;
+            }
+
+            button[type="submit"] {
+                font-size: 1rem;
+                padding: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-principal li a {
+                padding: 0 14px;
+                font-size: 0.85rem;
+            }
+        }

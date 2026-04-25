@@ -1,0 +1,219 @@
+/* ESTILO INTEGRADO - ELECCIONES SENADO 2026 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap');
+
+:root {
+    --primary: #b32a23;      /* Rojo institucional */
+    --accent: #db3434;       /* Rojo de énfasis */
+    --bg-body: #f4f7f9;      /* Gris azulado muy tenue */
+    --white: #ffffff;
+    --text: #371f1f;         /* Café muy oscuro para texto */
+    --footer-dark: #2f1b1a;  /* Color café oscuro del footer */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-body);
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* ====================== NAVEGACIÓN ====================== */
+.principal {
+    background-color: var(--primary);
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(47, 27, 26, 0.2);
+}
+
+.menu-principal {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.menu-principal > li {
+    position: relative;
+}
+
+/* Enlaces principales */
+.menu-principal li a {
+    color: #f1f5f9;
+    text-decoration: none;
+    padding: 25px 22px;
+    font-size: 0.87rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+
+.menu-principal li a:hover {
+    color: var(--white);
+    background-color: #fb2100; /* Rojo brillante para el hover */
+}
+
+/* ====================== SUBMENÚ MEJORADO ====================== */
+.submenu-lista {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--white);
+    min-width: 260px;
+    display: none;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    border-top: 5px solid var(--accent);
+    padding: 10px 0;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+}
+
+.submenu:hover .submenu-lista,
+.submenu:focus-within .submenu-lista {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(8px);
+}
+
+.menu-principal li a:focus {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
+.submenu-lista li a {
+    color: var(--text);
+    padding: 14px 24px;
+    display: block;
+    text-transform: none;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #f1f5f9;
+    transition: all 0.3s ease;
+}
+
+.submenu-lista li:last-child a {
+    border-bottom: none;
+}
+
+.submenu-lista li a:hover,
+.submenu-lista li a:focus {
+    background-color: #fff5f4; /* Tinte rojo sutil */
+    color: var(--primary);
+    padding-left: 32px;
+}
+
+/* ====================== RESTO DEL ESTILO ====================== */
+h1 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    color: var(--text);
+    font-size: 2.4rem;
+    margin: 60px 0 30px;
+}
+
+p {
+    margin: auto;
+    text-align: center;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    color: #684a4a; /* Gris rojizo */
+}
+
+table {
+    width: 90%;
+    max-width: 1150px;
+    margin: 30px auto 80px;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(60, 16, 16, 0.06);
+}
+
+th {
+    background-color: #fcfdfe;
+    color: var(--text);
+    padding: 20px 18px;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    text-align: left;
+    border-bottom: 3px solid var(--primary);
+}
+
+td {
+    padding: 18px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+td img {
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 5px 12px rgba(179, 42, 35, 0.12);
+    transition: transform 0.3s ease;
+    width: 120px;
+    height: 120px;
+}
+
+tr:hover td img {
+    transform: scale(1.06);
+}
+
+tr:nth-child(even) { 
+    background-color: #fafbfc; 
+}
+
+tr:hover { 
+    background-color: #fff5f4; /* Cambio de azul a rojo tenue */
+}
+
+td:nth-child(2) {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--footer-dark);
+    color: #94a3b8;
+    padding: 55px 20px 35px;
+    margin-top: 100px;
+    text-align: center;
+    border-top: 5px solid var(--primary);
+}
+
+.footer-content p {
+    color: #cbd5e0;
+    margin-bottom: 12px;
+}
+
+.footer-bottom {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: #64748b;
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}

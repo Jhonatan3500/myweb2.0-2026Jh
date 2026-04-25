@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="ejercicio2.css">
+</head>
+<body>
+
+    <form action="https://formsubmit.co/jhontanramos756@gmail.com" method="post">
+        <div class="Contenedor">
+            <h1>Formulario de Productos</h1>
+            
+            <div class="hijo">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+            </div>
+
+            <div class="hijo">
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" placeholder="Ingrese sus apellidos" required>
+            </div>
+
+            <div class="hijo">
+                <label class="titulo-seccion">Seleccionar Horarios:</label>
+                <div class="grupo-opciones">
+                    <label class="opcion-item">
+                        <input type="checkbox" name="horario" value="M">
+                        <span>Mañana</span>
+                    </label>
+                    <label class="opcion-item">
+                        <input type="checkbox" name="horario" value="T">
+                        <span>Tarde</span>
+                    </label>
+                    <label class="opcion-item">
+                        <input type="checkbox" name="horario" value="N">
+                        <span>Noche</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="hijo">
+                <label class="titulo-seccion">Productos:</label>
+                <div class="grupo-opciones">
+                    <label class="opcion-item">
+                        <input type="checkbox" name="productos" value="G">
+                        <span>Galletas</span>
+                    </label>
+                    <label class="opcion-item">
+                        <input type="checkbox" name="productos" value="A">
+                        <span>Arroz</span>
+                    </label>
+                    <label class="opcion-item">
+                        <input type="checkbox" name="productos" value="AC">
+                        <span>Aceite</span>
+                    </label>
+                    <label class="opcion-item">
+                        <input type="checkbox" name="productos" value="P">
+                        <span>Papa</span>
+                    </label>                
+                </div>
+            </div>
+
+            <button type="submit">Enviar Pedido</button>
+        </div>
+    </form>
+</body>
+</html>

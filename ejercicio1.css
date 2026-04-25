@@ -1,0 +1,226 @@
+/* =============================================
+   IMPORTACIÓN DE FUENTES
+   ============================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+/* =============================================
+   RESET + CONFIGURACIÓN BASE
+   ============================================= */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f7f9;
+    color: #2d3436;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.65;
+    font-size: 1rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* =============================================
+   CONTENEDOR PRINCIPAL (tarjeta)
+   ============================================= */
+.Contenedor {
+    max-width: 720px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 40px 36px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e6ecf3;
+    transition: box-shadow 0.3s ease;
+}
+
+.Contenedor:hover {
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal */
+.Contenedor h1 {
+    font-family: 'Playfair Display', serif;
+    color: #371f1f;
+    font-size: 2rem;
+    margin-bottom: 36px;
+    padding-left: 22px;
+    border-left: 6px solid #db3c34;
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+}
+
+/* =============================================
+   GRUPOS DE CAMPOS (div.hijo)
+   ============================================= */
+.hijo {
+    margin-bottom: 28px;
+}
+
+/* Etiquetas */
+.hijo label {
+    display: block;
+    font-weight: 600;
+    color: #371f1f;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    letter-spacing: -0.2px;
+}
+
+/* Campos de texto y select */
+.hijo input[type="text"],
+.hijo select,
+.hijo textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.98rem;
+    color: #2d3436;
+    background-color: #f9fafc;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+/* Estilo para el textarea */
+.hijo textarea {
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.55;
+    margin-top: 8px;
+}
+
+/* Foco en campos */
+.hijo input:focus,
+.hijo select:focus,
+.hijo textarea:focus {
+    outline: none;
+    border-color: #db3c34;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(219, 60, 52, 0.1);
+}
+
+/* Placeholder */
+::placeholder {
+    color: #94a3b8;
+    opacity: 0.8;
+}
+
+/* Texto de ayuda (small) */
+.hijo small {
+    display: block;
+    color: #64748b;
+    font-size: 0.82rem;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+/* =============================================
+   SELECT MULTIPLE PERSONALIZADO
+   ============================================= */
+.hijo select[multiple] {
+    min-height: 120px;
+    padding: 10px;
+    background-color: #ffffff;
+    scrollbar-width: thin;
+    scrollbar-color: #db3c34 #f1f5f9;
+}
+
+.hijo select[multiple] option {
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin: 3px 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.hijo select[multiple] option:checked {
+    background: linear-gradient(90deg, #db3c34, #b32a23);
+    color: white;
+    font-weight: 500;
+}
+
+.hijo select[multiple] option:hover {
+    background-color: #fee2e2;
+}
+
+/* Scroll para WebKit */
+.hijo select[multiple]::-webkit-scrollbar {
+    width: 8px;
+}
+.hijo select[multiple]::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 8px;
+}
+.hijo select[multiple]::-webkit-scrollbar-thumb {
+    background-color: #db3c34;
+    border-radius: 8px;
+}
+
+/* =============================================
+   BOTÓN DE ENVÍO
+   ============================================= */
+button[type="submit"] {
+    width: 100%;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #db3c34, #b32a23);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 20px rgba(219, 60, 52, 0.3);
+    margin-top: 16px;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #c5302a, #9b2c2c);
+    box-shadow: 0 12px 28px rgba(219, 60, 52, 0.45);
+    transform: translateY(-2px);
+}
+
+button[type="submit"]:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 12px rgba(219, 60, 52, 0.4);
+}
+
+/* =============================================
+   RESPONSIVIDAD
+   ============================================= */
+@media (max-width: 768px) {
+    .Contenedor {
+        margin: 20px 16px;
+        padding: 28px 22px;
+        border-radius: 16px;
+    }
+
+    .Contenedor h1 {
+        font-size: 1.7rem;
+        padding-left: 16px;
+    }
+
+    .hijo label {
+        font-size: 0.9rem;
+    }
+
+    button[type="submit"] {
+        font-size: 1rem;
+        padding: 14px;
+    }
+}

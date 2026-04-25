@@ -1,0 +1,108 @@
+@import url('https://googleapis.com');
+
+:root {
+    --primary: #d32f2f;
+    --primary-hover: #b71c1c;
+    --text: #1e293b;
+    --border: #e2e8f0;
+    --radius: 12px;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.Contenedor {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border-top: 6px solid var(--primary);
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--text);
+    margin-bottom: 30px;
+}
+
+.hijo {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(211, 47, 47, 0.1);
+}
+
+/* Estilo para los grupos de Checkbox */
+.grupo-opciones {
+    background: #fcfcfc;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.opcion-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.opcion-item:hover {
+    background: rgba(211, 47, 47, 0.05);
+}
+
+.opcion-item input {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    accent-color: var(--primary); /* El check se vuelve rojo */
+    cursor: pointer;
+}
+
+button {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(211, 47, 47, 0.2);
+}

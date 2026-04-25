@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Elecciones 2026</title>
+    <link rel="stylesheet" href="registros.css">
+
+</head>
+<body>
+
+    <nav class="principal">
+        <ul class="menu-principal">
+            <li><a href="index.html">Inicio</a></li>
+            
+            <li class="submenu">
+                <a href="#">Candidatos</a>
+                <ul class="submenu-lista">
+                    <li><a href="presidenciales.html">Presidenciales</a></li>
+                    <li><a href="senadores.html">Senadores Nacionales</a></li>
+                    <li><a href="senadoresregionales.html">Senadores Regionales</a></li>
+                    <li><a href="diputados.html">Diputados</a></li>
+                    <li><a href="parlamento.html">Parlamento Andino</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="mision.html">Misión y Visión</a></li>
+            <li><a href="consultas.html">Consultas</a></li>
+            <li><a href="registros.html">Iniciar Sesión</a></li>
+        </ul>
+    </nav>
+
+    <div class="login-container">
+        <div class="login-header">
+            <h1>Bienvenido</h1>
+            <p>Accede a tu cuenta electoral</p>
+        </div>
+
+        <div class="login-form">
+            <!-- Formulario de Inicio de Sesión -->
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+
+                <div class="options">
+                    <label>
+                        <input type="checkbox"> Recordarme
+                    </label>
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <button type="submit" class="btn-login">Iniciar Sesión</button>
+            </form>
+
+            <!-- Enlace para cambiar a registro -->
+            <div class="toggle-link">
+                ¿No tienes cuenta? 
+                <a href="#" onclick="alert('Esta es solo una simulación. En un proyecto real aquí iría el registro.')">
+                    Regístrate aquí
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-bottom">
+            © 2026 Plataforma Electoral Independiente<br>
+            Esta es una página de demostración • Solo interfaz visual
+        </div>
+    </footer>
+
+</body>
+</html>

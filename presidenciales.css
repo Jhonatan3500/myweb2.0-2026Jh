@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap');
+
+        :root {
+            /* Colores actualizados a la identidad institucional */
+            --primary-dark: #b32a23;    /* Rojo académico */
+            --accent-red: #db5034;      /* Rojo acento */
+            --hover-bright: #fb2100;    /* Rojo brillante para hover */
+            --text-main: #371f1f;       /* Café oscuro institucional */
+            --bg-light: #f4f7f9;
+            --white: #ffffff;
+            --footer-bg: #2f1b1a;       /* Fondo oscuro de tu footer */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* ====================== NAVEGACIÓN ====================== */
+        .principal {
+            background-color: var(--primary-dark);
+            height: 76px; /* Ajustado a tu primer diseño */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(60, 16, 16, 0.2);
+        }
+
+        .menu-principal {
+            list-style: none;
+            display: flex;
+            height: 100%;
+        }
+
+        .menu-principal li {
+            position: relative;
+        }
+
+        .menu-principal li a {
+            color: #f1f5f9;
+            text-decoration: none;
+            padding: 0 28px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .menu-principal li a:hover {
+            color: #ffffff;
+            background-color: var(--hover-bright);
+        }
+
+        /* SUBMENÚ */
+        .submenu-lista {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--white);
+            min-width: 280px;
+            display: none;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            border-radius: 0 0 12px 12px;
+            border-top: 5px solid var(--accent-red);
+            padding: 8px 0;
+            z-index: 999;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .submenu:hover .submenu-lista {
+            display: block;
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .submenu-lista li a {
+            color: #502c2c;
+            padding: 14px 24px;
+            display: block;
+            font-size: 0.95rem;
+            text-decoration: none;
+            border-bottom: 1px solid #f1f5f9;
+            transition: all 0.3s ease;
+            height: auto; /* Reset para submenú */
+        }
+
+        .submenu-lista li a:hover {
+            background-color: #f8fafc;
+            color: var(--primary-dark);
+            padding-left: 34px;
+        }
+
+        /* ====================== ENCABEZADO ====================== */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--text-main);
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+
+        h1::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 5px;
+            background: var(--primary-dark);
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+
+        /* ====================== TABLA PROFESIONAL ====================== */
+        table {
+            width: 92%;
+            max-width: 1300px;
+            margin: 0 auto 80px;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e6ecf3;
+        }
+
+        th {
+            background-color: var(--primary-dark);
+            color: #ffffff;
+            padding: 22px 18px;
+            text-align: left;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #edf2f7;
+            vertical-align: middle;
+            color: #684a4a; /* Gris rojizo de tu diseño */
+        }
+
+        tr:hover {
+            background-color: #fff5f4; /* Un toque de rojo muy tenue al pasar el mouse */
+        }
+
+        td img {
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            transition: transform 0.4s ease;
+            width: 130px;
+            height: 130px;
+            border: 1px solid #f1f5f9;
+        }
+
+        tr:hover td img {
+            transform: scale(1.08);
+        }
+
+        td:first-child {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text-main);
+        }
+
+        td:nth-child(2) {
+            color: var(--primary-dark); /* Nombre del partido/cargo en rojo */
+            font-weight: 600;
+        }
+
+        td:last-child {
+            font-size: 0.92rem;
+            color: #8b6764;
+            max-width: 280px;
+        }
+
+        /* ====================== FOOTER ====================== */
+        footer {
+            background-color: var(--footer-bg);
+            color: #cbd5e0;
+            text-align: center;
+            padding: 60px 20px 30px;
+            margin-top: 80px;
+            border-top: 5px solid var(--accent-red);
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        /* Responsividad */
+        @media (max-width: 900px) {
+            .principal { height: auto; padding: 15px 0; }
+            .menu-principal { flex-wrap: wrap; justify-content: center; }
+            table { width: 98%; }
+            td img { width: 100px; height: 100px; }
+        }
